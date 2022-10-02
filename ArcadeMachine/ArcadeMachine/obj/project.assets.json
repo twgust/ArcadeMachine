@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mesam\\Source\\Repos\\twgust\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
+      "projectUniqueName": "C:\\Skola\\Examensprojekt\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
       "projectName": "ArcadeMachine",
-      "projectPath": "C:\\Users\\Mesam\\Source\\Repos\\twgust\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
+      "projectPath": "C:\\Skola\\Examensprojekt\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
       "packagesPath": "C:\\Users\\Mesam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mesam\\Source\\Repos\\twgust\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\obj\\",
+      "outputPath": "C:\\Skola\\Examensprojekt\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
