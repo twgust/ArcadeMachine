@@ -7,9 +7,9 @@ namespace ArcadeMachine
             InitializeComponent();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
