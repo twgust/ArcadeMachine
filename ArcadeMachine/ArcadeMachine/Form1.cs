@@ -11,7 +11,7 @@ namespace ArcadeMachine
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -29,6 +29,11 @@ namespace ArcadeMachine
             info.FileName = (path);
             info.Arguments = "--parentHWND " + hWnd;
             Process.Start(info);
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Debug.WriteLine("Stänger arkad " + " " + e.CloseReason);
         }
     }
 }
