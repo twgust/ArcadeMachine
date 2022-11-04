@@ -15,6 +15,10 @@ namespace ArcadeMachine
             {
                 Debug.WriteLine(p.ProcessName);
             }
+
+            NetworkService network = new NetworkService(7117, "127.0.0.1");
+            network.startServer();
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
