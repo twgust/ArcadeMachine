@@ -9,11 +9,14 @@ namespace ArcadeMachine
         private string GameDirPath = "C:\\Users\\sweet\\Desktop\\gamesdir\\game\\";
         private string GameExecPath = "C:\\Users\\sweet\\Desktop\\gamesdir\\game\\My project.exe";
 
+        public delegate void StartGame(String myString);
+        public StartGame gameDelegate;
 
         public Form1()
         {
           
             InitializeComponent();
+            gameDelegate = new StartGame(startGame);
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
@@ -24,11 +27,19 @@ namespace ArcadeMachine
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            // define path for a unity game built for WINDOWS. 
-            startGame(GameExecPath);
+         
         }
 
-        private void startGame(String path)
+        /// <summary>
+        /// Method <c>startGame</c> Delegate, start game on UI thread...
+        /// once delegate is invoked.
+        /// Flow of method invocation:
+        /// 1) NetworkService.init() -(callback interface)-> 
+        /// 2) Controller.startGame(String path)  -(delegate)-> 
+        /// 3) gui.startGame (UI Thread)
+        /// </summary>
+        /// <param name="path">path of the .exe file to be executed</param>
+        public void startGame(String path)
         {
             var hWnd = this.Handle;
             String str = hWnd.ToString();
@@ -39,12 +50,18 @@ namespace ArcadeMachine
             Process.Start(info);
         }
 
+        /// <summary>
+        /// Error handling, should the app crash it's important to deal with the unity player 
+        /// as it is a process independent from this application. 
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Debug.WriteLine("Stänger arkad...\n  " + " " + e.CloseReason);
 
+            Process[] ArcadeMachine = Process.GetProcessesByName("ArcadeMachine.exe");
             Process[] unityCrashHdlProcess = Process.GetProcessesByName("UnityCrashHandler64");
-            
+        
             foreach (Process item in unityCrashHdlProcess)
             {
                 Debug.WriteLine("Killing Crash handler <" + item.Id + ">" + " " + item.ProcessName) ;
