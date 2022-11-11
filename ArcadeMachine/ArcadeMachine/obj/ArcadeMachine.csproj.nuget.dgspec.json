@@ -1,90 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sweet\\Documents\\GitHub\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj": {}
+    "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sweet\\Documents\\GitHub\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj": {
+    "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\ArcadeMachineLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sweet\\Documents\\GitHub\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
-        "projectName": "ArcadeMachine",
-        "projectPath": "C:\\Users\\sweet\\Documents\\GitHub\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
-        "packagesPath": "C:\\Users\\sweet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sweet\\Documents\\GitHub\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\sweet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0-windows"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
-            "projectReferences": {
-              "D:\\Repositories\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\ArcadeMachineLibrary.csproj": {
-                "projectPath": "D:\\Repositories\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\ArcadeMachineLibrary.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WindowsForms": {
-              "privateAssets": "none"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\Repositories\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\ArcadeMachineLibrary.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\Repositories\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\ArcadeMachineLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\ArcadeMachineLibrary.csproj",
         "projectName": "ArcadeMachineLibrary",
-        "projectPath": "D:\\Repositories\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\ArcadeMachineLibrary.csproj",
-        "packagesPath": "C:\\Users\\sweet\\.nuget\\packages\\",
-        "outputPath": "D:\\Repositories\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\obj\\",
+        "projectPath": "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\ArcadeMachineLibrary.csproj",
+        "packagesPath": "C:\\Users\\Ludvi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\sweet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ludvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -125,7 +55,69 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
+        "projectName": "ArcadeMachine",
+        "projectPath": "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
+        "packagesPath": "C:\\Users\\Ludvi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ludvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\ArcadeMachineLibrary.csproj": {
+                "projectPath": "C:\\Users\\Ludvi\\Desktop\\ArcadeMachine\\ArcadeMachine\\ArcadeMachineLibrary\\ArcadeMachineLibrary\\ArcadeMachineLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

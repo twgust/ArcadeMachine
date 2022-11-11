@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="D:\Repositories\ArcadeMachineLibrary\ArcadeMachineLibrary\ArcadeMachineLibrary.csproj" />
+    <ProjectReference Include="..\ArcadeMachineLibrary\ArcadeMachineLibrary\ArcadeMachineLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>

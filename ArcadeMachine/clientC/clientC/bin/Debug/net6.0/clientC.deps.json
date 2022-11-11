@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "clientC/1.0.0": {
+        "dependencies": {
+          "ArcadeMachineLibrary": "1.0.0"
+        },
+        "runtime": {
+          "clientC.dll": {}
+        }
+      },
+      "ArcadeMachineLibrary/1.0.0": {
+        "runtime": {
+          "ArcadeMachineLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "clientC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcadeMachineLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

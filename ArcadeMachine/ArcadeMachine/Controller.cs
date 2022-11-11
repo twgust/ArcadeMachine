@@ -1,6 +1,8 @@
-﻿using System;
+﻿using ArcadeMachineLibrary;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +12,18 @@ namespace ArcadeMachine
 {
     internal class Controller: OnGameReceivedCallback
     {
-        private Form1 gui; 
+        public event EventHandler<string> GameStartEvent;
+        //private Form1 gui; 
         private OnGameReceivedCallback callback;
-        public Controller( Form1 form)
+        //public Controller( Form1 form)
+        //{
+        //    this.gui = form;
+          //  callback = this;
+        //    CreateModules();
+        //}
+
+        public Controller()
         {
-            this.gui = form;
             callback = this;
             CreateModules();
         }
@@ -31,7 +40,13 @@ namespace ArcadeMachine
         /// </summary>
         public void StartGame(string gameTitle, string path)
         {
-            gui.BeginInvoke(gui.gameDelegate, path);
+            OnGameStart(gameTitle, path);
+            // gui.BeginInvoke(gui.gameDelegate, path);
+        }
+
+        protected virtual void OnGameStart(string gameTitle, string path)
+        {
+            GameStartEvent(this, path);
         }
     }
 }
