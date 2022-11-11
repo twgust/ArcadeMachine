@@ -10,10 +10,10 @@ namespace ArcadeMachine
         private string GameExecPath = "C:\\Users\\sweet\\Desktop\\gamesdir\\game\\My project.exe";
 
         public delegate void StartGame(String myString);
-        public StartGame gameDelegate;
 
-       // private Controller controller;
-
+        /*
+         * Initialises Form, creates a Controller and registers a listener.
+         */
         public Form1()
         {          
             InitializeComponent();
@@ -32,15 +32,9 @@ namespace ArcadeMachine
          
         }
 
-        /// <summary>
-        /// Method <c>startGame</c> Delegate, start game on UI thread...
-        /// once delegate is invoked.
-        /// Flow of method invocation:
-        /// 1) NetworkService.init() -(callback interface)-> 
-        /// 2) Controller.startGame(String path)  -(delegate)-> 
-        /// 3) gui.startGame (UI Thread)
-        /// </summary>
-        /// <param name="path">path of the .exe file to be executed</param>
+        /*
+         * Listener method that receives filepath for which game to launch.
+         */
         private void startGame(object sender, String path)
         {
             Debug.WriteLine($"Startar {path}");
@@ -69,7 +63,6 @@ namespace ArcadeMachine
             {
                 Debug.WriteLine("Killing Crash handler <" + item.Id + ">" + " " + item.ProcessName) ;
                 item.Kill();
-
             }
         }
     }

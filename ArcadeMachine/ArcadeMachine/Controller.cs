@@ -36,6 +36,10 @@ namespace ArcadeMachine
             OnGameStart(gameTitle, path);
         }
 
+        /*
+         * Fires event to registered listener (GUI).
+         * Parameter for path to selected game.
+         */
         protected virtual void OnGameStart(string gameTitle, string path)
         {
             GameStartEvent(this, path);
