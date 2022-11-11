@@ -17,9 +17,7 @@ namespace ArcadeMachine
         public Form1()
         {          
             InitializeComponent();
-           // gameDelegate = new StartGame(startGame);
             new Controller().GameStartEvent += startGame;
-           // controller.GameStartEvent += startGame;
 
         }
 
@@ -43,17 +41,6 @@ namespace ArcadeMachine
         /// 3) gui.startGame (UI Thread)
         /// </summary>
         /// <param name="path">path of the .exe file to be executed</param>
-        //public void startGame(String path)
-        //{
-        //    var hWnd = this.Handle;
-        //    String str = hWnd.ToString();
-        //    ProcessStartInfo info = new ProcessStartInfo();
-
-        //    info.FileName = (path);
-        //    info.Arguments = "--parentHWND " + hWnd;
-        //    Process.Start(info);
-        //}
-
         private void startGame(object sender, String path)
         {
             Debug.WriteLine($"Startar {path}");

@@ -13,14 +13,7 @@ namespace ArcadeMachine
     internal class Controller: OnGameReceivedCallback
     {
         public event EventHandler<string> GameStartEvent;
-        //private Form1 gui; 
         private OnGameReceivedCallback callback;
-        //public Controller( Form1 form)
-        //{
-        //    this.gui = form;
-          //  callback = this;
-        //    CreateModules();
-        //}
 
         public Controller()
         {
@@ -41,7 +34,6 @@ namespace ArcadeMachine
         public void StartGame(string gameTitle, string path)
         {
             OnGameStart(gameTitle, path);
-            // gui.BeginInvoke(gui.gameDelegate, path);
         }
 
         protected virtual void OnGameStart(string gameTitle, string path)
