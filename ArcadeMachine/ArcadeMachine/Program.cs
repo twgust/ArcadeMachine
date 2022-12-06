@@ -12,7 +12,9 @@ namespace ArcadeMachine
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            Debug.WriteLine("123");
             ApplicationConfiguration.Initialize();
+
             Form1 form1 = new Form1();
             Controller ctrl = new Controller(form1);
             Application.Run(form1);

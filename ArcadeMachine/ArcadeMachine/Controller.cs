@@ -12,17 +12,21 @@ namespace ArcadeMachine
     {
         private Form1 gui; 
         private OnGameReceivedCallback callback;
-        public Controller( Form1 form)
+        public Controller( Form1 form )
         {
             this.gui = form;
             callback = this;
-            CreateModules();
+            StartServer();
+            //gui.StartMenu(); Bug - no input from unity
+
         }
 
-        private void CreateModules()
+        private void StartServer()
         {
             NetworkService network = new NetworkService(11111, "127.0.0.1", callback);
-            network.startServer();
+            Thread t = new Thread(network.init);
+            t.IsBackground = true;
+            t.Start();
         }
 
         /// <summary>

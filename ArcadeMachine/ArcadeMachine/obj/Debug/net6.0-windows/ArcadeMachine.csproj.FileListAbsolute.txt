@@ -25,6 +25,7 @@ C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\bin\De
 C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\bin\Debug\net6.0-windows\ArcadeMachineLibrary.pdb
 C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\obj\Debug\net6.0-windows\ArcadeMachine.csproj.AssemblyReference.cache
 C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\obj\Debug\net6.0-windows\ArcadeMachine.Form1.resources
+C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\obj\Debug\net6.0-windows\ArcadeMachine.GAMELAYER.resources
 C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\obj\Debug\net6.0-windows\ArcadeMachine.Properties.Resources.resources
 C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\obj\Debug\net6.0-windows\ArcadeMachine.csproj.GenerateResource.cache
 C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\obj\Debug\net6.0-windows\ArcadeMachine.GeneratedMSBuildEditorConfig.editorconfig
@@ -37,3 +38,5 @@ C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\obj\De
 C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\obj\Debug\net6.0-windows\ArcadeMachine.pdb
 C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\obj\Debug\net6.0-windows\ArcadeMachine.genruntimeconfig.cache
 C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\obj\Debug\net6.0-windows\ref\ArcadeMachine.dll
+C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\bin\Debug\net6.0-windows\SharedDataDLL.dll
+C:\Users\sweet\Documents\GitHub\ArcadeMachine\ArcadeMachine\ArcadeMachine\bin\Debug\net6.0-windows\SharedDataDLL.pdb
