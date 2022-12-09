@@ -9,7 +9,8 @@ namespace ArcadeMachine
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private Form1 menu;
+        private Form1 Menu;
+        private String Path;
 
         [DllImport("user32.dll")]
         public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
@@ -18,10 +19,21 @@ namespace ArcadeMachine
         const int MYACTION_HOTKEY_ID = 1;
 
 
-        public GAMELAYER(Form1 menu)
+        public GAMELAYER(Form1 menu, String path)
         {
-            this.menu = menu;
-            RegisterHotKey(this.Handle, MYACTION_HOTKEY_ID, 6, (int)Keys.Insert);
+            try
+            {
+                this.Menu = menu;
+                this.Path = path;
+                RegisterHotKey(this.Handle, MYACTION_HOTKEY_ID, 6, (int)Keys.Insert);
+            }
+            catch (Exception ex) { Debug.WriteLine(ex.StackTrace + ex.Message); 
+           
+            }
+            
+
+            
+          
 
         }
         protected override void WndProc(ref Message m)
@@ -34,19 +46,31 @@ namespace ArcadeMachine
                 killGame("My project.exe");
 
                 // step 2: hide game frame (form)
-                this.Hide();
+               // this.Hide();
                 this.Visible = false;
                 this.WindowState = FormWindowState.Minimized;
 
                 // step 3: display menu frame (form)
-                menu.OnGameQuit();
+                killGame(this.Path);
+                Menu.Show();
+                Menu.WindowState = FormWindowState.Maximized;
+                
             }
             base.WndProc(ref m);
         }
 
-        protected void killGame(String processName)
+        /// <summary>
+        /// kills game process given path. 
+        /// </summary>
+        /// <param name="path"></param>
+        protected void killGame(String path)
         {
-            Process[] process = Process.GetProcessesByName(processName);
+            String[] exe = path.Split('/');
+            foreach (String s in exe)
+            {
+                System.Console.WriteLine($"<{s}>");
+            }
+            Process[] process = Process.GetProcessesByName(path);
             foreach (Process processItem in process)
             {
                processItem.Kill();
@@ -56,8 +80,11 @@ namespace ArcadeMachine
         public void DisplayMenu()
 
         {
-            
-            menu.Visible = true;
+            Menu.Location = this.Location;
+            Menu.StartPosition = FormStartPosition.Manual;
+           // menu.FormClosing += delegate { this.Show(); };
+            Menu.Show();
+            Menu.WindowState = FormWindowState.Maximized;
 
         }
 
@@ -90,11 +117,12 @@ namespace ArcadeMachine
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(250, 250);
             this.Name = "GAMELAYER";
             this.Text = "Form2";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GAMELAYER_Load);
             this.Click += new System.EventHandler(this.GAMELAYER_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GAMELAYER_KeyPress);

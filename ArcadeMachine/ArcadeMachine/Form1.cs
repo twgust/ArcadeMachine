@@ -1,9 +1,13 @@
 using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.IO.Pipes;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ArcadeMachine
 {
@@ -13,15 +17,15 @@ namespace ArcadeMachine
     /// </summary>
     public partial class Form1 : Form
     {
-        private string gamesDirPath = "C:\\Users\\sweet\\Desktop\\gamesdir\\";
-        private string GameDirPath = "C:\\Users\\sweet\\Desktop\\gamesdir\\game\\";
-        private string GameExecPath = "C:\\Users\\sweet\\Desktop\\gamesdir\\game\\My project.exe";
+       public delegate void StartGame(String myString);
+       public StartGame gameDelegate;
+ 
+        [DllImport("UnityPlayer")]
+        private static extern int UnityMain(IntPtr hInstance, IntPtr hPrevInstance,
+      [MarshalAs(UnmanagedType.LPWStr)] string lpCmdline, int nShowCmd);
 
-        public delegate void StartGame(String myString);
-        public StartGame gameDelegate;
-        private Process process;
-
-
+        [DllImport("User32.dll")]
+        private static extern int SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
         /// <summary>
         /// 
         /// </summary>
@@ -29,35 +33,53 @@ namespace ArcadeMachine
         {
             InitializeComponent();
             gameDelegate = new StartGame(LoadGame);
+    
+        }
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+
+            Controller controller = new Controller(this);
+            StartMenu();
         }
 
         /// <summary>
+        /// Embeds UnityPlayer.dll into application and runs it on its own thread
         /// </summary>
         public void StartMenu()
-        { 
-            var hWnd = this.Handle;
-            String path = "C:\\Users\\sweet\\Desktop\\proj\\Windowed\\Arcade_menu.exe";
-            ProcessStartInfo info = new ProcessStartInfo();
-            info.CreateNoWindow = true;
-            info.FileName = (path);
-            info.Arguments = "--parentHWND " + hWnd;
-            Process.Start(info);
-            Debug.WriteLine("!!!!!"+ Thread.CurrentThread.ToString());
+        {
+            var handle = Process.GetCurrentProcess().Handle;
+            String commandArgs = "--parentHWND " + this.Handle + " delayed";
+            Thread thread = new Thread(() =>
+            {
+                UnityMain(handle, IntPtr.Zero, commandArgs, 1);
+            });
+            thread.Start();
+            SetParent(IntPtr.Zero, this.Handle);
         }
-
 
         /// <summary>
         /// </summary>
         /// <param name="path"></param>
+      
         public void LoadGame(String path)
         {
-            // instantiate Game View-Holder [Frame/Form]
-            var GameProperFrame = new GAMELAYER(this);
+            try
+            {    
+                // instantiate Game View-Holder [Frame/Form]
+            GAMELAYER GameProperFrame = new GAMELAYER(this, path);
+            
             ShowGameProper_View(GameProperFrame);
             HideGameMenu_View(); // <-- refers to Form1
 
             // pass Integer pointer of Game Frame to StartGame function 
             StartGameProper(path, GameProperFrame.Handle);
+
+            }catch  (Exception ex) { Debug.WriteLine(ex.Message);
+                Debug.WriteLine(ex.StackTrace);
+            }
+       
         }
 
         /// <summary>
@@ -68,37 +90,42 @@ namespace ArcadeMachine
             // game layer frame
             frame.Location = this.Location;
             frame.StartPosition = FormStartPosition.Manual;
-            frame.FormClosing += delegate { this.Show(); };
+          //  frame.FormClosing += delegate { this.Show(); };
             frame.Show();
             frame.WindowState = FormWindowState.Maximized;
         }
 
 
         /// <summary>
+        /// Hide Form1.cs (Game menu) from being displayed.
         /// </summary>
         private void HideGameMenu_View()
         {
             this.Hide();
-            this.Visible = false;
-            this.WindowState = FormWindowState.Minimized;
+            //this.Visible = false;
+            //this.WindowState = FormWindowState.Minimized;
         }
 
         /// <summary>
+        /// Shows Form1.cs (Game Menu)
         /// </summary>
         private void ShowGameMenu_View()
         {
+            this.Location = this.Location;
+            this.StartPosition = FormStartPosition.Manual;
+            //  frame.FormClosing += delegate { this.Show(); };
             this.Show();
-            this.Visible = true;
             this.WindowState = FormWindowState.Maximized;
         }
 
         /// <summary>
+        /// Function starts the game specified by path,
+        /// invoked by LoadGame(String path);
         /// </summary>
         /// <param name="path">Path of game.exe received from Unity Menu</param>
-        /// <param name="wdwPtr">Handle to the WinForms Frame</param>
+        /// <param name="wdwPtr">Handle to the Winforms Window in which the Game will be displayed</param>
         public void StartGameProper(String path, IntPtr wdwPtr)
         {
-            killArcade();
             ProcessStartInfo info = new ProcessStartInfo();
             info.FileName = (path);
             info.Arguments = "--parentHWND " + wdwPtr;
@@ -117,13 +144,10 @@ namespace ArcadeMachine
 
         public void OnGameQuit()
         {
-            ShowGameMenu_View();
+            
+           ShowGameMenu_View();
         }
 
-        public void OneFrameTest(String path)
-        {
-            StartGameProper(path, this.Handle);
-        }
 
         protected void killArcade()
         {
@@ -154,26 +178,12 @@ namespace ArcadeMachine
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
-            /*
-        /// <summary>
-        /// Method <c>StartGane</c> Delegate, start game on UI thread...
-        /// once delegate is invoked.
-        /// Flow of method invocation:
-        /// 1) NetworkService.init() -(callback interface)-> 
-        /// 2) Controller.StartGane(String path)  -(delegate)-> 
-        /// 3) gui.StartGane (UI Thread)
-        /// </summary>
-        /// <param name="path">path of the .exe file to be executed</param>
-        public void startGame(String path)
-        {          
-            var hWnd = this.Handle;
-            ProcessStartInfo info = new ProcessStartInfo();
-            info.FileName = (path);
-            //info.Arguments = "--parentHWND " + hWnd;
-            Process.Start(info);
-            Debug.WriteLine("ok");
-        }
-        */
+

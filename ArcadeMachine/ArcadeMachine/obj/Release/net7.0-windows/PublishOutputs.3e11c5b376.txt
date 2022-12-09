@@ -1,0 +1,9 @@
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachine.exe
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachine.dll
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachine.deps.json
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachine.runtimeconfig.json
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachine.pdb
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachineLibrary.dll
+C:\Users\sweet\Desktop\ARCADE\SharedDataDLL.dll
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachineLibrary.pdb
+C:\Users\sweet\Desktop\ARCADE\SharedDataDLL.pdb

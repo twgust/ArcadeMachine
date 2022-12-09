@@ -16,8 +16,8 @@ namespace ArcadeMachine
             ApplicationConfiguration.Initialize();
 
             Form1 form1 = new Form1();
-            Controller ctrl = new Controller(form1);
             Application.Run(form1);
+
         }
     }
 }

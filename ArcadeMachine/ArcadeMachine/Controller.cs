@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,8 +18,7 @@ namespace ArcadeMachine
             this.gui = form;
             callback = this;
             StartServer();
-            //gui.StartMenu(); Bug - no input from unity
-
+    
         }
 
         private void StartServer()
@@ -33,9 +33,24 @@ namespace ArcadeMachine
         /// Method <c>StartGame</c> Callback function. invoked by NetworkService, 
         /// notifies GUI thread to start game in WinForm.
         /// </summary>
+        [MethodImpl(MethodImplOptions.Synchronized)]
         public void StartGame(string gameTitle, string path)
         {
-            gui.BeginInvoke(gui.gameDelegate, path);
+   
+            try
+            {
+               gui.BeginInvoke(gui.LoadGame, path);
+
+            }
+            catch ( Exception e )
+            {
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(e.StackTrace);
+            }
+                 
+           
+            
+          
         }
     }
 }

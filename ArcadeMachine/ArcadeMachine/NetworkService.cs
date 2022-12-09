@@ -73,15 +73,25 @@ namespace ArcadeMachine
                 // deserialization of shared class <c>ArcadeMachineLibrary.SharedData</c>
                 IFormatter formatter = new BinaryFormatter();
                 NetworkStream stream = this.tcpClient.GetStream();
-                GameObject obj = (GameObject)formatter.Deserialize(stream);
-                //SharedData obj = (SharedData) formatter.Deserialize(stream);
-              
-                Debug.WriteLine("KEY: " + obj.GetKey());
-                Debug.WriteLine("VALUE: " + obj.GetValue());
 
-                // upon successfull deserialization, notify controller with callback function
-                // passing the values from SharedData into the callback func. 
+                while (true)
+                {
+
+                
+
+                #pragma warning disable SYSLIB0011
+                GameObject obj = formatter.Deserialize(stream) as GameObject;
+                #pragma warning restore SYSLIB001 https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient.getstream?view=net-7.0
+                //SharedData obj = (SharedData) formatter.Deserialize(stream);
+
+                 Debug.WriteLine("KEY: " + obj.GetKey());
+                 Debug.WriteLine("VALUE: " + obj.GetValue());
+
+                    // upon successfull deserialization, notify controller with callback function
+                    // passing the values from SharedData into the callback func. 
+                stream.Close();
                 startGameCallback.StartGame(obj.GetKey(), obj.GetValue());
+                }
             }
             catch (SerializationException e)
             {               
