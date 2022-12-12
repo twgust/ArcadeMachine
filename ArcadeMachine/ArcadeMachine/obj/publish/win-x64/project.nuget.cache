@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "I3aGM3U+QGtt5fI6LMlVsQUf94lI+ZPfSNIriyagM/f1my+U9wylQ5AlNxWy7iedOqotWp/2FOpxiU+g2fuVgg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sweet\\Documents\\GitHub\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sweet\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.27\\microsoft.windows.sdk.net.ref.10.0.17763.27.nupkg.sha512"
+  ],
+  "logs": []
+}

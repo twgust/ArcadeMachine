@@ -1,0 +1,69 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0/win-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {},
+    ".NETCoreApp,Version=v7.0/win-x64": {
+      "ArcadeMachine/1.0.0": {
+        "dependencies": {
+          "ArcadeMachineLibrary": "1.0.0",
+          "SharedDataDLL": "1.0.0.0",
+          "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.17763.27"
+        },
+        "runtime": {
+          "ArcadeMachine.dll": {}
+        }
+      },
+      "runtimepack.Microsoft.Windows.SDK.NET.Ref/10.0.17763.27": {
+        "runtime": {
+          "Microsoft.Windows.SDK.NET.dll": {
+            "assemblyVersion": "10.0.17763.24",
+            "fileVersion": "10.0.17763.27"
+          },
+          "WinRT.Runtime.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.39961"
+          }
+        }
+      },
+      "ArcadeMachineLibrary/1.0.0": {
+        "runtime": {
+          "ArcadeMachineLibrary.dll": {}
+        }
+      },
+      "SharedDataDLL/1.0.0.0": {
+        "runtime": {
+          "SharedDataDLL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ArcadeMachine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "runtimepack.Microsoft.Windows.SDK.NET.Ref/10.0.17763.27": {
+      "type": "runtimepack",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ArcadeMachineLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SharedDataDLL/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

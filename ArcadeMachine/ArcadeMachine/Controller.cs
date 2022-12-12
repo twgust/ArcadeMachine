@@ -24,6 +24,7 @@ namespace ArcadeMachine
         private void StartServer()
         {
             NetworkService network = new NetworkService(11111, "127.0.0.1", callback);
+            
         }
 
         /// <summary>

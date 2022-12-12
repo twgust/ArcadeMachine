@@ -27,17 +27,13 @@ namespace ArcadeMachine
                 this.Menu = menu;
                 this.Path = path;
                 this.Title = title;
-                RegisterHotKey(this.Handle, MYACTION_HOTKEY_ID, 6, (int)Keys.Insert);
+                RegisterHotKey(this.Handle, MYACTION_HOTKEY_ID, 6, (int)Keys.PageDown);
             }
             catch (Exception ex) { Debug.WriteLine(ex.StackTrace + ex.Message); 
            
             }
-            
-
-            
-          
-
         }
+
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == 0x0312 && m.WParam.ToInt32() == MYACTION_HOTKEY_ID)
@@ -53,7 +49,6 @@ namespace ArcadeMachine
                 this.WindowState = FormWindowState.Minimized;
 
                 // step 3: display menu frame (form)
-               
                 Menu.Show();
                 Menu.WindowState = FormWindowState.Maximized;
                 Menu.OnGameQuit(this);
@@ -79,8 +74,6 @@ namespace ArcadeMachine
                     processItem.Kill();
                 }
             }
-      
-          
         }
 
         public void DisplayMenu()
