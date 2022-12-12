@@ -1,0 +1,5 @@
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachine.exe
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachine.dll
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachine.deps.json
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachine.runtimeconfig.json
+C:\Users\sweet\Desktop\ARCADE\ArcadeMachine.pdb

@@ -2,11 +2,34 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <TargetFramework>net7.0-windows10.0.17763.0</TargetFramework>
+    <Nullable>warnings</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <StartupObject>ArcadeMachine.Program</StartupObject>
+    <UseWPF>False</UseWPF>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Form2.cs" />
+    <Compile Remove="Form2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Form2.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="D:\Repositories\ArcadeMachineLibrary\ArcadeMachineLibrary\ArcadeMachineLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SharedDataDLL">
+      <HintPath>D:\Repositories\SharedDataDLL\SharedDataDLL\bin\Debug\SharedDataDLL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

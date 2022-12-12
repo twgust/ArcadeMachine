@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UH/Mqzq95QZdRJRZmR0Mjh5DtOGfChi/gwpIMy1tBUF3nqzCTjPfbc4t9GLRPyLOwjvNsUGHmDetlLXVW+NNCA==",
+  "dgSpecHash": "88q6v0gVzERg4PZ+arXqRlnP2cymJeRxzT46Ft73Xud63MUzkUMPDl83GI/OfXbHm5VkCwNJqBrcKhlDQfl/yA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mesam\\source\\repos\\twgust\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\sweet\\Documents\\GitHub\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sweet\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.27\\microsoft.windows.sdk.net.ref.10.0.17763.27.nupkg.sha512"
+  ],
   "logs": []
 }
