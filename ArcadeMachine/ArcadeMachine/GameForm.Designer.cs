@@ -11,6 +11,7 @@ namespace ArcadeMachine
         private System.ComponentModel.IContainer components = null;
         private Form1 Menu;
         private String Path;
+        private String Title;
 
         [DllImport("user32.dll")]
         public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
@@ -19,12 +20,13 @@ namespace ArcadeMachine
         const int MYACTION_HOTKEY_ID = 1;
 
 
-        public GAMELAYER(Form1 menu, String path)
+        public GAMELAYER(Form1 menu, String title, String path)
         {
             try
             {
                 this.Menu = menu;
                 this.Path = path;
+                this.Title = title;
                 RegisterHotKey(this.Handle, MYACTION_HOTKEY_ID, 6, (int)Keys.Insert);
             }
             catch (Exception ex) { Debug.WriteLine(ex.StackTrace + ex.Message); 
@@ -43,18 +45,19 @@ namespace ArcadeMachine
                 Debug.WriteLine("> GLOBALKEYBIND [CTRL + SHIFT + INS] INVOKED");
 
                 // step 1: kill game process
-                killGame("My project.exe");
+                killGame(this.Title);
 
                 // step 2: hide game frame (form)
-               // this.Hide();
+                // this.Hide();
                 this.Visible = false;
                 this.WindowState = FormWindowState.Minimized;
 
                 // step 3: display menu frame (form)
-                killGame(this.Path);
+               
                 Menu.Show();
                 Menu.WindowState = FormWindowState.Maximized;
-                
+                Menu.OnGameQuit(this);
+
             }
             base.WndProc(ref m);
         }
@@ -65,16 +68,19 @@ namespace ArcadeMachine
         /// <param name="path"></param>
         protected void killGame(String path)
         {
-            String[] exe = path.Split('/');
-            foreach (String s in exe)
+            Debug.WriteLine(path + " KILLLLLL IT");
+            if(path == "chooseme")
             {
-                System.Console.WriteLine($"<{s}>");
+                String str = "My project";
+                Process[] custom = Process.GetProcessesByName(str);
+                foreach (Process processItem in custom)
+                {
+                    Debug.WriteLine(processItem.ToString() );
+                    processItem.Kill();
+                }
             }
-            Process[] process = Process.GetProcessesByName(path);
-            foreach (Process processItem in process)
-            {
-               processItem.Kill();
-            }
+      
+          
         }
 
         public void DisplayMenu()

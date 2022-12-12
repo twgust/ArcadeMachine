@@ -65,7 +65,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

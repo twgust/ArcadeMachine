@@ -24,9 +24,6 @@ namespace ArcadeMachine
         private void StartServer()
         {
             NetworkService network = new NetworkService(11111, "127.0.0.1", callback);
-            Thread t = new Thread(network.init);
-            t.IsBackground = true;
-            t.Start();
         }
 
         /// <summary>
@@ -36,10 +33,9 @@ namespace ArcadeMachine
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void StartGame(string gameTitle, string path)
         {
-   
             try
             {
-               gui.BeginInvoke(gui.LoadGame, path);
+               gui.BeginInvoke(gui.LoadGame, gameTitle, path);
 
             }
             catch ( Exception e )
@@ -47,10 +43,6 @@ namespace ArcadeMachine
                 Debug.WriteLine(e.Message);
                 Debug.WriteLine(e.StackTrace);
             }
-                 
-           
-            
-          
         }
     }
 }
