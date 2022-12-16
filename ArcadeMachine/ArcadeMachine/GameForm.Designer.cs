@@ -59,25 +59,6 @@ namespace ArcadeMachine
             base.WndProc(ref m);
         }
 
-        /// <summary>
-        /// kills game process given path. 
-        /// </summary>
-        /// <param name="path"></param>
-        protected void killGame(String path)
-        {
-            Debug.WriteLine(path + " KILLLLLL IT");
-            if(path == "chooseme")
-            {
-                String str = "My project";
-                Process[] custom = Process.GetProcessesByName(str);
-                foreach (Process processItem in custom)
-                {
-                    Debug.WriteLine(processItem.ToString() );
-                    processItem.Kill();
-                }
-            }
-        }
-
         protected void CloseGame(String title)
         {
             Process[] p = Process.GetProcessesByName(title);
