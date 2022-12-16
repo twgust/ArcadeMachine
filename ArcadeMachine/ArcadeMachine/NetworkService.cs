@@ -51,7 +51,7 @@ namespace ArcadeMachine
                     #pragma warning disable SYSLIB0011
                     IFormatter formatter = new BinaryFormatter();
                     GameObject obj = formatter.Deserialize(stream) as GameObject;
-                    #pragma warning restore SYSLIB0011 https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient.getstream?view=net-7.0  
+                    #pragma warning restore SYSLIB0011https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient.getstream?view=net-7.0  
                     Debug.WriteLine("[NETWORKSERVICE] >> isDataAvailable: " + stream.DataAvailable);   
                         if (stream.DataAvailable)
                         {
@@ -60,13 +60,13 @@ namespace ArcadeMachine
                             var value = obj.GetValue();
                             // flush stream and wait so we don't start the same game multiple times.
                             await stream.FlushAsync();
-                            Debug.WriteLine("[NETWORKSERVICE] >> New Game [KEY: " + obj.GetKey() + ", VALUE:" + obj.GetValue() + "]");
+                            Debug.WriteLine("[NETWORKSERVICE] >> New Game [KEY: " + key + ", VALUE:" + value + "]");
                             startGameCallback.StartGame(key, value);
                         }
                     }
                     catch(Exception ex)
                     {
-                        Debug.WriteLine(ex.StackTrace);
+                        Console.WriteLine(ex.StackTrace);
                     }
                 }
             });

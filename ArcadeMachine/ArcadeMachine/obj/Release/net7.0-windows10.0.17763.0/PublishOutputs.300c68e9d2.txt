@@ -1,0 +1,11 @@
+C:\Users\sweet\Desktop\runthis2\ArcadeMachine.exe
+C:\Users\sweet\Desktop\runthis2\ArcadeMachine.dll
+C:\Users\sweet\Desktop\runthis2\ArcadeMachine.deps.json
+C:\Users\sweet\Desktop\runthis2\ArcadeMachine.runtimeconfig.json
+C:\Users\sweet\Desktop\runthis2\ArcadeMachine.pdb
+C:\Users\sweet\Desktop\runthis2\Microsoft.Windows.SDK.NET.dll
+C:\Users\sweet\Desktop\runthis2\WinRT.Runtime.dll
+C:\Users\sweet\Desktop\runthis2\ArcadeMachineLibrary.dll
+C:\Users\sweet\Desktop\runthis2\SharedDataDLL.dll
+C:\Users\sweet\Desktop\runthis2\ArcadeMachineLibrary.pdb
+C:\Users\sweet\Desktop\runthis2\SharedDataDLL.pdb

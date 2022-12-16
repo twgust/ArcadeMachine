@@ -24,13 +24,18 @@ namespace ArcadeMachine
         {
             try
             {
+                this.WindowState = FormWindowState.Normal;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+
                 this.Menu = menu;
                 this.Path = path;
                 this.Title = title;
                 RegisterHotKey(this.Handle, MYACTION_HOTKEY_ID, 6, (int)Keys.PageDown);
+                Debug.WriteLine("PATH: " + path + "\nTITLE:" + title);
             }
-            catch (Exception ex) { Debug.WriteLine(ex.StackTrace + ex.Message); 
-           
+            catch (Exception ex) { 
+                Debug.WriteLine(ex.StackTrace + ex.Message); 
             }
         }
 
@@ -39,20 +44,17 @@ namespace ArcadeMachine
             if (m.Msg == 0x0312 && m.WParam.ToInt32() == MYACTION_HOTKEY_ID)
             {
                 Debug.WriteLine("> GLOBALKEYBIND [CTRL + SHIFT + INS] INVOKED");
-
                 // step 1: kill game process
-                killGame(this.Title);
+                CloseGame(this.Title);
 
                 // step 2: hide game frame (form)
-                // this.Hide();
                 this.Visible = false;
                 this.WindowState = FormWindowState.Minimized;
 
                 // step 3: display menu frame (form)
-                Menu.Show();
                 Menu.WindowState = FormWindowState.Maximized;
+                Menu.Show();
                 Menu.OnGameQuit(this);
-
             }
             base.WndProc(ref m);
         }
@@ -76,15 +78,14 @@ namespace ArcadeMachine
             }
         }
 
-        public void DisplayMenu()
-
+        protected void CloseGame(String title)
         {
-            Menu.Location = this.Location;
-            Menu.StartPosition = FormStartPosition.Manual;
-           // menu.FormClosing += delegate { this.Show(); };
-            Menu.Show();
-            Menu.WindowState = FormWindowState.Maximized;
-
+            Process[] p = Process.GetProcessesByName(title);
+            foreach(Process process in p)
+            {
+                Debug.WriteLine("killing process " + process.ToString());
+                process.Kill();
+            }
         }
 
         /// <summary>
@@ -122,10 +123,6 @@ namespace ArcadeMachine
             this.Name = "GAMELAYER";
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.GAMELAYER_Load);
-            this.Click += new System.EventHandler(this.GAMELAYER_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GAMELAYER_KeyPress);
-            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GAMELAYER_PreviewKeyDown);
             this.ResumeLayout(false);
 
         }

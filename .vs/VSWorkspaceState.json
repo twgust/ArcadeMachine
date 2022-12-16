@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ArcadeMachine",
+    "\\ArcadeMachine\\ArcadeMachine",
+    "\\ArcadeMachine\\ArcadeMachine\\bin",
+    "\\ArcadeMachine\\ArcadeMachine\\bin\\Debug",
+    "\\ArcadeMachine\\ArcadeMachine\\bin\\Debug\\net7.0-windows10.0.17763.0",
+    "\\ArcadeMachine\\ArcadeMachine\\bin\\Release\\net7.0-windows10.0.17763.0"
   ],
-  "SelectedNode": "\\ArcadeMachine.sln",
+  "SelectedNode": "\\ArcadeMachine\\ArcadeMachine\\bin\\Debug\\net7.0-windows10.0.17763.0",
   "PreviewInSolutionExplorer": false
 }

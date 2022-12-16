@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "pINeazwFpQ4jkLlVowLFLEtLyuD6t2k5jV5r0hchv3XETcCgwGdr8JmHX81sWfCcfiFZQRGmBYr3sn1UiK0qsg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sweet\\Documents\\GitHub\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine\\ArcadeMachine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sweet\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\7.0.0\\microsoft.netcore.app.runtime.win-x86.7.0.0.nupkg.sha512",
+    "C:\\Users\\sweet\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\7.0.0\\microsoft.windowsdesktop.app.runtime.win-x86.7.0.0.nupkg.sha512",
+    "C:\\Users\\sweet\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\7.0.0\\microsoft.aspnetcore.app.runtime.win-x86.7.0.0.nupkg.sha512",
+    "C:\\Users\\sweet\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.27\\microsoft.windows.sdk.net.ref.10.0.17763.27.nupkg.sha512"
+  ],
+  "logs": []
+}

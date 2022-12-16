@@ -17,26 +17,5 @@ namespace ArcadeMachine
         {
             InitializeComponent();
         }
-        //TODO register a keybutton listener which will initiate the "go back to menu" sequence, 
-        // --> minimize game window, kill game process, start game menu, maximize game menu process.
-        private void GAMELAYER_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Debug.WriteLine(e.KeyChar.ToString());
-            if (e.KeyChar == 'o')
-            {
-                Debug.WriteLine(e.KeyChar);
-                e.Handled = true;
-            }
-        }
-
-        private void GAMELAYER_Load(object sender, EventArgs e)
-        {
-            Debug.WriteLine(e.GetType().ToString());
-        }
-
-        private void GAMELAYER_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-
-        }
     }
 }
